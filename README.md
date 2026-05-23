@@ -7,6 +7,7 @@ Configuracoes do meu desktop Windows com Komorebi, whkd e YASB.
 - `.config/yasb/config.yaml`
 - `.config/yasb/styles.css`
 - `.config/whkdrc`
+- `applications.json`
 - `komorebi.json`
 - `komorebi.bar.json`
 
@@ -46,13 +47,10 @@ New-Item -ItemType Directory -Force -Path "$HOME\.config\yasb"
 New-Item -ItemType HardLink -Path "$HOME\.config\yasb\config.yaml" -Target "$HOME\dotfiles\.config\yasb\config.yaml"
 New-Item -ItemType HardLink -Path "$HOME\.config\yasb\styles.css" -Target "$HOME\dotfiles\.config\yasb\styles.css"
 New-Item -ItemType HardLink -Path "$HOME\.config\whkdrc" -Target "$HOME\dotfiles\.config\whkdrc"
+New-Item -ItemType HardLink -Path "$HOME\applications.json" -Target "$HOME\dotfiles\applications.json"
 New-Item -ItemType HardLink -Path "$HOME\komorebi.json" -Target "$HOME\dotfiles\komorebi.json"
 New-Item -ItemType HardLink -Path "$HOME\komorebi.bar.json" -Target "$HOME\dotfiles\komorebi.bar.json"
 ```
-
-Se usar regras por aplicacao no Komorebi, mantenha tambem este arquivo fora do repo:
-
-- `%USERPROFILE%\applications.json`
 
 Inicie o ambiente:
 
