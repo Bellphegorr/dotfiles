@@ -1596,14 +1596,14 @@
     "floating": [
       [
         {
-          "kind": "Exe",
-          "id": "Ssms.exe",
-          "matching_strategy": "Equals"
+          "kind": "Class",
+          "id": "HwndWrapper[DefaultDomain",
+          "matching_strategy": "StartsWith"
         },
         {
-          "kind": "Class",
-          "id": "WindowsForms10.Window.8.app",
-          "matching_strategy": "StartsWith"
+          "kind": "Title",
+          "id": "Conectar",
+          "matching_strategy": "Equals"
         }
       ]
     ]

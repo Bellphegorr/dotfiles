@@ -1,10 +1,15 @@
 {
   "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.41/schema.json",
-  "animation": {
-    "enabled": false,
-    "duration": 200
-  },
   "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
+  "manage_rules": [
+    [
+      {
+        "kind": "Class",
+        "id": "HwndWrapper[DefaultDomain",
+        "matching_strategy": "StartsWith"
+      }
+    ]
+  ],
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
   "default_workspace_padding": 5,
@@ -18,7 +23,6 @@
     "unfocused_border": "Base03",
     "bar_accent": "Base0D"
   },
-  "transparency": true,
   "monitors": [
     {
       "workspaces": [
