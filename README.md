@@ -27,6 +27,26 @@ winget install --id AmN.yasb --exact --source winget
 winget install --id DEVCOM.JetBrainsMonoNerdFont --exact --source winget
 ```
 
+Abra um novo terminal depois do `winget` e confirme que os binarios ficaram no `PATH`:
+
+```powershell
+Get-Command komorebic, whkd, yasb
+```
+
+Se `komorebic` ou `whkd` nao forem encontrados, adicione os bins ao `PATH` do usuario:
+
+```powershell
+$required = @("C:\Program Files\komorebi\bin", "C:\Program Files\whkd\bin")
+$userPath = [Environment]::GetEnvironmentVariable("Path", "User")
+$segments = $userPath -split ';' | Where-Object { $_ }
+foreach ($dir in $required) {
+	if ($segments -notcontains $dir) {
+		$segments += $dir
+	}
+}
+[Environment]::SetEnvironmentVariable("Path", ($segments | Select-Object -Unique) -join ';', "User")
+```
+
 Notas:
 
 - `Segoe UI` e `Segoe Fluent Icons` ja vem no Windows.
@@ -38,6 +58,30 @@ Clone o repositorio:
 
 ```powershell
 git clone <SEU_REPO> "$HOME\dotfiles"
+```
+
+Se ja houver configuracoes nesses caminhos, faca backup ou mova os arquivos antes de criar os hardlinks. O `New-Item -ItemType HardLink` falha se o destino ja existir.
+
+Exemplo de backup rapido:
+
+```powershell
+$backupRoot = Join-Path $HOME ("dotfiles-backup\komorebi-yasb-" + (Get-Date -Format 'yyyyMMdd-HHmmss'))
+$paths = @(
+	"$HOME\.config\yasb\config.yaml",
+	"$HOME\.config\yasb\styles.css",
+	"$HOME\.config\whkdrc",
+	"$HOME\applications.json",
+	"$HOME\komorebi.json",
+	"$HOME\komorebi.bar.json"
+)
+
+foreach ($path in $paths) {
+	if (Test-Path $path) {
+		$backup = Join-Path $backupRoot ($path.Replace("$HOME\", ""))
+		New-Item -ItemType Directory -Force -Path (Split-Path $backup) | Out-Null
+		Move-Item -Path $path -Destination $backup -Force
+	}
+}
 ```
 
 Crie os links para os caminhos usados no Windows:
@@ -55,16 +99,16 @@ New-Item -ItemType HardLink -Path "$HOME\komorebi.bar.json" -Target "$HOME\dotfi
 Inicie o ambiente:
 
 ```powershell
-komorebic start --whkd
+komorebic start --config "$HOME\komorebi.json" --whkd
 yasb
 ```
 
-## Comandos uteis
+Valide o setup:
 
 ```powershell
-komorebic reload-configuration
-taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden
-yasb
+komorebic check
+komorebic state
+Get-Process komorebi, whkd, yasb
 ```
 
 ## Notas
