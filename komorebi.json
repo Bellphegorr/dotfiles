@@ -28,15 +28,15 @@
       "workspaces": [
         {
           "name": "I",
-          "layout": "BSP"
+          "layout": "UltrawideVerticalStack"
         },
         {
           "name": "II",
-          "layout": "VerticalStack"
+          "layout": "UltrawideVerticalStack"
         },
         {
           "name": "III",
-          "layout": "HorizontalStack"
+          "layout": "UltrawideVerticalStack"
         },
         {
           "name": "IV",
@@ -44,15 +44,47 @@
         },
         {
           "name": "V",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "VI",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "VII",
+          "layout": "UltrawideVerticalStack"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "Rows"
+        },
+        {
+          "name": "II",
+          "layout": "Rows"
+        },
+        {
+          "name": "III",
+          "layout": "Rows"
+        },
+        {
+          "name": "IV",
+          "layout": "Rows"
+        },
+        {
+          "name": "V",
           "layout": "Rows"
         },
         {
           "name": "VI",
-          "layout": "Grid"
+          "layout": "Rows"
         },
         {
           "name": "VII",
-          "layout": "RightMainVerticalStack"
+          "layout": "Rows"
         }
       ]
     }
