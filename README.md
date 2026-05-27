@@ -7,6 +7,8 @@ Configuracoes do meu desktop Windows com Komorebi, whkd e YASB.
 - `.config/yasb/config.yaml`
 - `.config/yasb/styles.css`
 - `.config/whkdrc`
+- `AppData/Roaming/Zed/settings.json`
+- `AppData/Roaming/Zed/keymap.json`
 - `applications.json`
 - `komorebi.json`
 - `komorebi.bar.json`
@@ -16,6 +18,7 @@ Configuracoes do meu desktop Windows com Komorebi, whkd e YASB.
 - `Komorebi`: gerenciador de janelas tiling.
 - `whkd`: atalhos de teclado para controlar o Komorebi.
 - `YASB`: barra superior com widgets e integracao com o Komorebi.
+- `Zed`: editor de texto com foco em performance e colaboracao.
 
 ## Instalar
 
@@ -60,7 +63,7 @@ Clone o repositorio:
 git clone <SEU_REPO> "$HOME\dotfiles"
 ```
 
-Se ja houver configuracoes nesses caminhos, faca backup ou mova os arquivos antes de criar os hardlinks. O `New-Item -ItemType HardLink` falha se o destino ja existir.
+Se ja houver configuracoes nesses caminhos, faca backup ou mova os arquivos antes de criar os links. O `New-Item` falha se o destino ja existir.
 
 Exemplo de backup rapido:
 
@@ -70,6 +73,8 @@ $paths = @(
 	"$HOME\.config\yasb\config.yaml",
 	"$HOME\.config\yasb\styles.css",
 	"$HOME\.config\whkdrc",
+	"$HOME\AppData\Roaming\Zed\settings.json",
+	"$HOME\AppData\Roaming\Zed\keymap.json",
 	"$HOME\applications.json",
 	"$HOME\komorebi.json",
 	"$HOME\komorebi.bar.json"
@@ -88,9 +93,12 @@ Crie os links para os caminhos usados no Windows:
 
 ```powershell
 New-Item -ItemType Directory -Force -Path "$HOME\.config\yasb"
+New-Item -ItemType Directory -Force -Path "$HOME\AppData\Roaming\Zed"
 New-Item -ItemType HardLink -Path "$HOME\.config\yasb\config.yaml" -Target "$HOME\dotfiles\.config\yasb\config.yaml"
 New-Item -ItemType HardLink -Path "$HOME\.config\yasb\styles.css" -Target "$HOME\dotfiles\.config\yasb\styles.css"
 New-Item -ItemType HardLink -Path "$HOME\.config\whkdrc" -Target "$HOME\dotfiles\.config\whkdrc"
+New-Item -ItemType HardLink -Path "$HOME\AppData\Roaming\Zed\settings.json" -Target "$HOME\dotfiles\AppData\Roaming\Zed\settings.json"
+New-Item -ItemType HardLink -Path "$HOME\AppData\Roaming\Zed\keymap.json" -Target "$HOME\dotfiles\AppData\Roaming\Zed\keymap.json"
 New-Item -ItemType HardLink -Path "$HOME\applications.json" -Target "$HOME\dotfiles\applications.json"
 New-Item -ItemType HardLink -Path "$HOME\komorebi.json" -Target "$HOME\dotfiles\komorebi.json"
 New-Item -ItemType HardLink -Path "$HOME\komorebi.bar.json" -Target "$HOME\dotfiles\komorebi.bar.json"
@@ -115,4 +123,5 @@ Get-Process komorebi, whkd, yasb
 
 - O YASB recarrega `config.yaml` e `styles.css` ao salvar.
 - O arquivo `.config/yasb/yasb.log` e gerado em runtime e nao entra no Git.
+- O Zed usa `settings.json` e `keymap.json` em `%APPDATA%\Zed`; como os arquivos ficam no mesmo volume, este repositorio usa hardlinks para ambos.
 - O `whkdrc` ja esta sincronizado neste repositorio.
