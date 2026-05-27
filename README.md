@@ -104,11 +104,20 @@ New-Item -ItemType HardLink -Path "$HOME\komorebi.json" -Target "$HOME\dotfiles\
 New-Item -ItemType HardLink -Path "$HOME\komorebi.bar.json" -Target "$HOME\dotfiles\komorebi.bar.json"
 ```
 
+O `komorebi.json` do repositorio referencia diretamente `dotfiles/applications.json`, e os arquivos na raiz ficam apenas como caminhos de compatibilidade no Windows.
+
 Inicie o ambiente:
 
 ```powershell
-komorebic start --config "$HOME\komorebi.json" --whkd
+& "$HOME\dotfiles\start-komorebi.cmd"
 yasb
+```
+
+Para iniciar automaticamente no logon, deixe um launcher em `%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\komorebi-autostart.cmd` com este conteudo:
+
+```cmd
+@echo off
+call "%USERPROFILE%\dotfiles\start-komorebi.cmd"
 ```
 
 Valide o setup:
@@ -125,3 +134,4 @@ Get-Process komorebi, whkd, yasb
 - O arquivo `.config/yasb/yasb.log` e gerado em runtime e nao entra no Git.
 - O Zed usa `settings.json` e `keymap.json` em `%APPDATA%\Zed`; como os arquivos ficam no mesmo volume, este repositorio usa hardlinks para ambos.
 - O `whkdrc` ja esta sincronizado neste repositorio.
+- O launcher `start-komorebi.cmd` sempre usa `dotfiles/komorebi.json`, mesmo quando o Komorebi e iniciado pelo YASB ou pelo Startup do Windows.
