@@ -7,6 +7,16 @@
         "kind": "Class",
         "id": "HwndWrapper[DefaultDomain",
         "matching_strategy": "StartsWith"
+      },
+      {
+        "kind": "Class",
+        "id": "TaskManagerWindow",
+        "matching_strategy": "Legacy"
+      },
+      {
+        "kind": "Title",
+        "id": "Conectar",
+        "matching_strategy": "Equals"
       }
     ]
   ],
@@ -24,8 +34,8 @@
     "bar_accent": "Base0D"
   },
   "display_index_preferences": {
-    "0": "GSM7714-5&171f0761&0&UID4352",
-    "1": "GSM59C6-5&171f0761&0&UID4354"
+    "0": "GSM7714-4&1112cff6&0&UID198171",
+    "1": "GSM59C4-4&1112cff6&0&UID200195"
   },
   "monitors": [
     {
