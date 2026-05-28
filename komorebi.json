@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.41/schema.json",
-  "app_specific_configuration_path": "$Env:USERPROFILE/dotfiles/applications.json",
+  "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
   "manage_rules": [
     [
       {
@@ -23,36 +23,40 @@
     "unfocused_border": "Base03",
     "bar_accent": "Base0D"
   },
+  "display_index_preferences": {
+    "0": "GSM7714-5&171f0761&0&UID4352",
+    "1": "GSM59C6-5&171f0761&0&UID4354"
+  },
   "monitors": [
     {
       "workspaces": [
         {
           "name": "I",
-          "layout": "UltrawideVerticalStack"
+          "layout": "VerticalStack"
         },
         {
           "name": "II",
-          "layout": "UltrawideVerticalStack"
+          "layout": "VerticalStack"
         },
         {
           "name": "III",
-          "layout": "UltrawideVerticalStack"
+          "layout": "VerticalStack"
         },
         {
           "name": "IV",
-          "layout": "UltrawideVerticalStack"
+          "layout": "VerticalStack"
         },
         {
           "name": "V",
-          "layout": "UltrawideVerticalStack"
+          "layout": "VerticalStack"
         },
         {
           "name": "VI",
-          "layout": "UltrawideVerticalStack"
+          "layout": "VerticalStack"
         },
         {
           "name": "VII",
-          "layout": "UltrawideVerticalStack"
+          "layout": "VerticalStack"
         }
       ]
     },
@@ -60,31 +64,11 @@
       "workspaces": [
         {
           "name": "I",
-          "layout": "Rows"
+          "layout": "Grid"
         },
         {
           "name": "II",
-          "layout": "Rows"
-        },
-        {
-          "name": "III",
-          "layout": "Rows"
-        },
-        {
-          "name": "IV",
-          "layout": "Rows"
-        },
-        {
-          "name": "V",
-          "layout": "Rows"
-        },
-        {
-          "name": "VI",
-          "layout": "Rows"
-        },
-        {
-          "name": "VII",
-          "layout": "Rows"
+          "layout": "Grid"
         }
       ]
     }
