@@ -2,7 +2,7 @@ watch_stylesheet: true
 watch_config: true
 debug: false
 komorebi:
-  start_command: "komorebic start --whkd"
+  start_command: 'cmd /c "%USERPROFILE%\dotfiles\start-komorebi.cmd"'
   stop_command: "komorebic stop --whkd"
   reload_command: "komorebic reload-configuration"
 
