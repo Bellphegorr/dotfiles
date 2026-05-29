@@ -65,21 +65,24 @@
 }
 
 .komorebi-workspaces .ws-btn {
-  font-size: 24px;
+  font-size: 16px;
   margin: 0 3px;
-  padding: 0;
+  padding: 4px;
   color: #8a8a8d;
   border: none;
+  opacity: 0.1;
 }
 
 .komorebi-workspaces .ws-btn.populated {
   color: #8a8a8d;
+  opacity: 0.7;
 }
 
 .komorebi-workspaces .ws-btn:hover,
 .komorebi-workspaces .ws-btn.populated:hover,
 .komorebi-workspaces .ws-btn.active {
   color: #f59e0b;
+  opacity: 1;
 }
 
 .komorebi-workspaces .float-override {

@@ -7,15 +7,26 @@
         "kind": "Class",
         "id": "HwndWrapper[DefaultDomain",
         "matching_strategy": "StartsWith"
-      },
+      }
+    ],
+    [
       {
         "kind": "Class",
         "id": "TaskManagerWindow",
         "matching_strategy": "Legacy"
-      },
+      }
+    ],
+    [
       {
         "kind": "Title",
         "id": "Conectar",
+        "matching_strategy": "Equals"
+      }
+    ],
+    [
+      {
+        "kind": "Exe",
+        "id": "Ssms.exe",
         "matching_strategy": "Equals"
       }
     ]
@@ -42,31 +53,31 @@
     {
       "workspaces": [
         {
-          "name": "I",
+          "name": "\uf120",
           "layout": "VerticalStack"
         },
         {
-          "name": "II",
+          "name": "\udb80\udd69",
           "layout": "VerticalStack"
         },
         {
-          "name": "III",
+          "name": "\uf268",
           "layout": "VerticalStack"
         },
         {
-          "name": "IV",
+          "name": "\udb80\ude4b",
           "layout": "VerticalStack"
         },
         {
-          "name": "V",
+          "name": "\uf4b8",
           "layout": "VerticalStack"
         },
         {
-          "name": "VI",
+          "name": "\udb80\udf72",
           "layout": "VerticalStack"
         },
         {
-          "name": "VII",
+          "name": "\uf111",
           "layout": "VerticalStack"
         }
       ]
@@ -74,11 +85,11 @@
     {
       "workspaces": [
         {
-          "name": "I",
+          "name": "\uf111",
           "layout": "Rows"
         },
         {
-          "name": "II",
+          "name": "\uf111",
           "layout": "Grid"
         }
       ]

@@ -88,11 +88,11 @@ widgets:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
       volume_icons:
-        - "\udb81\udd81" # muted
-        - "\uf026" # 0-10%
-        - "\uf027" # 11-30%
-        - "\uf027" # 31-60%
-        - "\uf028" # 61-100%
+        - "\udb81\udf5f" # muted
+        - "\udb81\udd7f" # 0-10%
+        - "\udb81\udd80" # 11-30%
+        - "\udb81\udd80" # 31-60%
+        - "\udb81\udd7e" # 61-100%
       callbacks:
         on_right: "exec cmd.exe /c start ms-settings:sound"
 
@@ -100,12 +100,12 @@ widgets:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
       label_offline: "Komorebi Offline"
-      label_workspace_btn: "\u25cf"
-      label_workspace_active_btn: "\u25cf"
-      label_workspace_populated_btn: "\u25cf"
+      label_workspace_btn: "{name}"
+      label_workspace_active_btn: "{name}"
+      label_workspace_populated_btn: "{name}"
       label_default_name: ""
       label_zero_index: false
-      hide_empty_workspaces: true
+      hide_empty_workspaces: false
       hide_if_offline: false
       container_padding:
         top: 0
