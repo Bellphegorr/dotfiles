@@ -25,7 +25,8 @@
   "default_workspace_padding": 5,
   "default_container_padding": 5,
   "border": true,
-  "border_width": 3,
+  "border_width": 4,
+  "border_style": "Square",
   "border_offset": -1,
   "theme": {
     "palette": "Base16",
