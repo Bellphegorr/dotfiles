@@ -37,7 +37,7 @@
   "default_container_padding": 5,
   "border": true,
   "border_width": 4,
-  "border_style": "Square",
+  "border_style": "System",
   "border_offset": -1,
   "theme": {
     "palette": "Base16",
@@ -74,6 +74,10 @@
         },
         {
           "name": "\udb80\udf72",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "\uf4ca",
           "layout": "VerticalStack"
         },
         {
