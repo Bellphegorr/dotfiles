@@ -9,7 +9,7 @@ komorebi:
 bars:
   status-bar:
     enabled: true
-    screens: ["*"]
+    screens: ["primary"]
     class_name: "yasb-bar"
     alignment:
       position: "top"
@@ -33,6 +33,35 @@ bars:
       right: 8
     widgets:
       left: ["taskbar", "komorebi_workspaces", "komorebi_active_layout"]
+      center: ["active_window"]
+      right: ["volume", "memory", "cpu", "clock"]
+
+  secondary-bar:
+    enabled: true
+    screens: ["*"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    blur_effect:
+      enabled: false
+      acrylic: false
+      dark_mode: false
+      round_corners: true
+      border_color: None
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 40
+    padding:
+      top: 4
+      left: 8
+      bottom: 0
+      right: 8
+    widgets:
+      left: ["taskbar", "komorebi_workspaces_alt", "komorebi_active_layout"]
       center: ["active_window"]
       right: ["volume", "memory", "cpu", "clock"]
 
@@ -106,12 +135,37 @@ widgets:
       label_default_name: ""
       label_zero_index: false
       hide_empty_workspaces: false
-      hide_if_offline: false
+      hide_if_offline: true
+      container_padding:
+        top: 0
+        left: 8
+        bottom: true
+        right: 8
+      app_icons:
+        enabled_populated: false
+        enabled_active: false
+        size: 14
+        max_icons: 0
+        hide_label: false
+        hide_duplicates: false
+        hide_floating: false
+
+  komorebi_workspaces_alt:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_workspace_btn: "{name}"
+      label_workspace_active_btn: "{name}"
+      label_workspace_populated_btn: "{name}"
+      label_default_name: ""
+      label_zero_index: false
+      hide_empty_workspaces: true
+      hide_if_offline: true
       container_padding:
         top: 0
         left: 8
         bottom: 0
         right: 8
+
   komorebi_active_layout:
     type: "komorebi.active_layout.ActiveLayoutWidget"
     options:

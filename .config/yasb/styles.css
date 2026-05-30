@@ -65,7 +65,7 @@
 }
 
 .komorebi-workspaces .ws-btn {
-  font-size: 16px;
+  font-size: 14px;
   margin: 0 3px;
   padding: 4px;
   color: #8a8a8d;
@@ -114,14 +114,14 @@
 /* === ICONS === */
 
 .icon {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .cpu-widget .icon,
 .memory-widget .icon,
 .clock-widget .icon,
 .volume-widget .icon {
-  font-size: 16px;
+  font-size: 14px;
   color: #8a8a8d;
   margin: 2px 6px 0 2px;
 }
