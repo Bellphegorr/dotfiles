@@ -29,6 +29,13 @@
         "id": "Ssms.exe",
         "matching_strategy": "Equals"
       }
+    ],
+    [
+      {
+        "kind": "Exe",
+        "id": "EpicGamesLauncher.exe",
+        "matching_strategy": "Equals"
+      }
     ]
   ],
   "window_hiding_behaviour": "Cloak",
