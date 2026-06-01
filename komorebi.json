@@ -47,10 +47,35 @@
   "border_style": "System",
   "border_offset": -1,
   "theme": {
-    "palette": "Base16",
-    "name": "BlackMetalBathory",
-    "unfocused_border": "Base03",
-    "bar_accent": "Base0D"
+    "palette": "Custom",
+    "bar_accent": "Base05",
+    "single_border": "Base05",
+    "stack_border": "Base05",
+    "floating_border": "Base05",
+    "monocle_border": "Base05",
+    "unfocused_border": "Base02",
+    "unfocused_locked_border": "Base08",
+    "stackbar_background": "Base00",
+    "stackbar_focused_text": "Base05",
+    "stackbar_unfocused_text": "Base04",
+    "colours": {
+      "base_00": "#0e0e0e",
+      "base_01": "#1e1e1e",
+      "base_02": "#262626",
+      "base_03": "#404040",
+      "base_04": "#737373",
+      "base_05": "#8a8a8d",
+      "base_06": "#bebebe",
+      "base_07": "#ffffff",
+      "base_08": "#b91c1c",
+      "base_09": "#f59e0b",
+      "base_0a": "#f59e0b",
+      "base_0b": "#a3a3a3",
+      "base_0c": "#8a8a8d",
+      "base_0d": "#8a8a8d",
+      "base_0e": "#bebebe",
+      "base_0f": "#525252"
+    }
   },
   "display_index_preferences": {
     "0": "GSM7714-4&1112cff6&0&UID198171",
@@ -111,7 +136,7 @@
         },
         {
           "name": "\udb80\udd69",
-          "layout": "Columns"
+          "layout": "VerticalStack"
         },
         {
           "name": "\uf268",

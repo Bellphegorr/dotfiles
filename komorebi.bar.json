@@ -2,9 +2,28 @@
   "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.41/schema.bar.json",
   "font_family": "JetBrains Mono",
   "theme": {
-    "palette": "Base16",
-    "name": "BlackMetalBathory",
-    "accent": "Base0D"
+    "palette": "Custom",
+    "accent": "Base0D",
+    "auto_select_fill": "Base0D",
+    "auto_select_text": "Base00",
+    "colours": {
+      "base_00": "#0d0d0d",
+      "base_01": "#171717",
+      "base_02": "#262626",
+      "base_03": "#404040",
+      "base_04": "#737373",
+      "base_05": "#d4d4d4",
+      "base_06": "#e5e5e5",
+      "base_07": "#fafafa",
+      "base_08": "#ef4444",
+      "base_09": "#f97316",
+      "base_0a": "#fbbf24",
+      "base_0b": "#22c55e",
+      "base_0c": "#06b6d4",
+      "base_0d": "#f59e0b",
+      "base_0e": "#fb7185",
+      "base_0f": "#78350f"
+    }
   },
   "all_monitors": true,
   "left_widgets": [

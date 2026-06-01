@@ -1,7 +1,8 @@
 /*
  * Matte Black Theme for YASB
  * Based on: github.com/tahayvr/matte-black-theme (Waybar)
- * bg: #0e0e0e | text: #8a8a8d | accent: #f59e0b
+ * base: #0e0e0e | surface: #161616 | text: #8a8a8d
+ * text-strong: #f3f3f4 | accent: #f59e0b
  */
 
 * {
@@ -89,6 +90,250 @@
   color: #f59e0b;
   font-size: 14px;
   padding: 0 0 0 8px;
+}
+
+/* Quick Launch Widget */
+.quick-launch-widget {
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.quick-launch-widget .icon {
+  font-size: 14px;
+  padding: 0 6px;
+  color: #8a8a8d;
+}
+
+.quick-launch-widget .icon:hover {
+  color: #d4d4d6;
+}
+
+/* Quick Launch Popup - main window */
+.quick-launch-popup .container {
+  background-color: rgba(14, 14, 14, 0.96);
+  border: 1px solid rgba(138, 138, 141, 0.18);
+  border-radius: 14px;
+}
+
+/* Search bar container */
+.quick-launch-popup .search {
+  padding: 14px 18px;
+  background-color: rgba(22, 22, 22, 0.98);
+  border-bottom: 1px solid rgba(138, 138, 141, 0.18);
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+/* Search loader line color */
+.quick-launch-popup .search .loader-line {
+  color: #f59e0b;
+}
+
+.quick-launch-popup .search .search-icon {
+  font-family: "Segoe Fluent Icons";
+  font-size: 18px;
+  color: rgba(138, 138, 141, 0.82);
+  padding-right: 8px;
+  min-width: 18px;
+}
+
+.quick-launch-popup .search .search-submit-icon {
+  font-family: "Segoe Fluent Icons";
+  font-size: 18px;
+  color: rgba(138, 138, 141, 0.82);
+  min-width: 18px;
+}
+
+.quick-launch-popup .search .search-input {
+  background: transparent;
+  border: none;
+  color: #f3f3f4;
+  font-size: 15px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: 500;
+  padding: 4px 0;
+}
+
+/* Search prefix styling (e.g., ">" for commands) */
+.quick-launch-popup .search .prefix {
+  background: #f59e0b;
+  border-radius: 6px;
+  color: #0e0e0e;
+  padding: 0 8px;
+  margin-top: 2px;
+  margin-right: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: "JetBrainsMono Nerd Font";
+  max-height: 24px;
+}
+
+/* Results list */
+.quick-launch-popup .results {
+  background: rgba(14, 14, 14, 0.94);
+  padding: 10px;
+}
+
+/* Individual result item here you can set font szie for title */
+.quick-launch-popup .results-list-view {
+  background: transparent;
+  color: #f3f3f4;
+  font-size: 15px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: 600;
+}
+
+.quick-launch-popup .results-list-view .description {
+  color: rgba(138, 138, 141, 0.78);
+  font-size: 11px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: 500;
+}
+
+.quick-launch-popup .results-list-view .separator {
+  color: #f59e0b;
+  font-size: 12px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: 700;
+  padding: 8px 0 4px 10px;
+}
+
+/* Result item hover and selected states */
+.quick-launch-popup .results-list-view::item {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  margin: 2px 0;
+  padding: 10px 12px;
+}
+
+.quick-launch-popup .results-list-view::item:hover,
+.quick-launch-popup .results-list-view::item:selected {
+  background-color: rgba(138, 138, 141, 0.12);
+  border: 1px solid rgba(138, 138, 141, 0.22);
+}
+
+/* Empty state when no results found */
+.quick-launch-popup .results-empty-text {
+  font-size: 16px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: 600;
+  color: #8a8a8d;
+  padding: 16px 8px;
+}
+
+/* Preview Pane */
+.quick-launch-popup .preview {
+  background: rgba(22, 22, 22, 0.94);
+  border-left: 1px solid rgba(138, 138, 141, 0.12);
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
+.quick-launch-popup .preview .preview-text {
+  font-size: 13px;
+  color: #d4d4d6;
+  padding: 10px 12px;
+  font-family: "JetBrainsMono Nerd Font";
+  background-color: rgba(255, 255, 255, 0.02);
+  border: none;
+}
+
+.quick-launch-popup .preview .preview-image {
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 10px 12px;
+}
+
+.quick-launch-popup .preview .preview-meta {
+  padding: 10px 12px;
+  border-top: 1px solid rgba(138, 138, 141, 0.12);
+  font-family: "JetBrainsMono Nerd Font";
+}
+
+.quick-launch-popup .preview .preview-meta .preview-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #f59e0b;
+  font-family: "JetBrainsMono Nerd Font";
+  margin-bottom: 6px;
+  margin-left: 0;
+}
+
+.quick-launch-popup .preview .preview-meta .preview-subtitle {
+  font-size: 12px;
+  color: rgba(138, 138, 141, 0.82);
+  font-family: "JetBrainsMono Nerd Font";
+  padding-bottom: 2px;
+}
+
+/* Preview inline edit form (.preview.edit) */
+.quick-launch-popup .preview.edit .preview-title {
+  font-size: 13px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: 700;
+  color: #f59e0b;
+  padding: 8px 12px 4px 12px;
+}
+
+.quick-launch-popup .preview.edit .preview-line-edit {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(138, 138, 141, 0.16);
+  border-radius: 6px;
+  color: #f3f3f4;
+  font-size: 13px;
+  font-family: "JetBrainsMono Nerd Font";
+  padding: 8px 10px;
+  margin: 0 12px;
+}
+
+.quick-launch-popup .preview.edit .preview-line-edit:focus {
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.quick-launch-popup .preview.edit .preview-text-edit {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(138, 138, 141, 0.16);
+  border-radius: 6px;
+  color: #f3f3f4;
+  font-size: 13px;
+  font-family: "JetBrainsMono Nerd Font";
+  padding: 8px 10px;
+  margin: 0 12px;
+}
+
+.quick-launch-popup .preview.edit .preview-text-edit:focus {
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.quick-launch-popup .preview.edit .preview-actions {
+  padding: 10px 12px 12px 12px;
+}
+
+.quick-launch-popup .preview.edit .preview-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(138, 138, 141, 0.16);
+  border-radius: 6px;
+  color: #d4d4d6;
+  font-size: 12px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: 700;
+  padding: 6px 16px;
+}
+
+.quick-launch-popup .preview.edit .preview-btn:hover {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.22);
+}
+
+.quick-launch-popup .preview.edit .preview-btn.save {
+  background: #f59e0b;
+  border-color: #f59e0b;
+  color: #0e0e0e;
+}
+
+.quick-launch-popup .preview.edit .preview-btn.save:hover {
+  background: #ffb01f;
+  border-color: #ffb01f;
 }
 
 /* === CENTER === */

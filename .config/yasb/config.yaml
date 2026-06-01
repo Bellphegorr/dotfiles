@@ -32,7 +32,13 @@ bars:
       bottom: 0
       right: 8
     widgets:
-      left: ["taskbar", "komorebi_workspaces", "komorebi_active_layout"]
+      left:
+        [
+          "taskbar",
+          "komorebi_workspaces",
+          "komorebi_active_layout",
+          "quick_launch",
+        ]
       center: ["active_window"]
       right: ["volume", "memory", "cpu", "clock"]
 
@@ -63,7 +69,6 @@ bars:
     widgets:
       left: ["taskbar", "komorebi_workspaces_alt", "komorebi_active_layout"]
       center: ["active_window"]
-      right: ["volume", "memory", "cpu", "clock"]
 
 widgets:
   taskbar:
@@ -204,3 +209,13 @@ widgets:
         left: 8
         bottom: 0
         right: 8
+
+  quick_launch:
+    type: "yasb.quick_launch.QuickLaunchWidget"
+    options:
+      label: "<span>\udb80\udc3b</span>"
+      search_placeholder: "Search applications..."
+      show_icons: false
+      keybindings:
+        - keys: "alt+space"
+          action: "toggle_quick_launch"
