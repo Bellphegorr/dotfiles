@@ -14,6 +14,8 @@ alt + i                 : komorebic toggle-shortcuts
 
 alt + q                 : komorebic close
 alt + m                 : komorebic minimize
+alt + shift + m         : komorebic manage
+alt + shift + u         : komorebic unmanage
 
 # Focus windows
 alt + h                 : komorebic focus left
