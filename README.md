@@ -2,17 +2,6 @@
 
 Configuracoes do meu desktop Windows com Komorebi, whkd e YASB.
 
-## Arquivos
-
-- `.config/yasb/config.yaml`
-- `.config/yasb/styles.css`
-- `.config/whkdrc`
-- `AppData/Roaming/Zed/settings.json`
-- `AppData/Roaming/Zed/keymap.json`
-- `applications.json`
-- `komorebi.json`
-- `komorebi.bar.json`
-
 ## Stack
 
 - `Komorebi`: gerenciador de janelas tiling.
@@ -49,11 +38,6 @@ foreach ($dir in $required) {
 }
 [Environment]::SetEnvironmentVariable("Path", ($segments | Select-Object -Unique) -join ';', "User")
 ```
-
-Notas:
-
-- `Segoe UI` e `Segoe Fluent Icons` ja vem no Windows.
-- `JetBrainsMono Nerd Font` so e util para a barra nativa do Komorebi.
 
 ## Usar
 
@@ -103,6 +87,30 @@ New-Item -ItemType HardLink -Path "$HOME\applications.json" -Target "$HOME\dotfi
 New-Item -ItemType HardLink -Path "$HOME\komorebi.json" -Target "$HOME\dotfiles\komorebi.json"
 New-Item -ItemType HardLink -Path "$HOME\komorebi.bar.json" -Target "$HOME\dotfiles\komorebi.bar.json"
 ```
+
+## Verificacao dos hardlinks
+
+Para conferir todos os hardlinks que este repositorio cria, rode:
+
+```powershell
+$paths = @(
+	"$HOME\.config\yasb\config.yaml",
+	"$HOME\.config\yasb\styles.css",
+	"$HOME\.config\whkdrc",
+	"$HOME\AppData\Roaming\Zed\settings.json",
+	"$HOME\AppData\Roaming\Zed\keymap.json",
+	"$HOME\applications.json",
+	"$HOME\komorebi.json",
+	"$HOME\komorebi.bar.json"
+)
+
+foreach ($path in $paths) {
+	Write-Host "`n=== $path ==="
+	fsutil hardlink list $path
+}
+```
+
+Se o hardlink estiver intacto, a saida de cada caminho precisa listar tambem o caminho parceiro no `dotfiles`. Se aparecer apenas o proprio caminho, o link foi quebrado.
 
 O `komorebi.json` do repositorio referencia diretamente `dotfiles/applications.json`, e os arquivos na raiz ficam apenas como caminhos de compatibilidade no Windows.
 

@@ -34,6 +34,9 @@
                 "reasoning_effort": ["xhigh"]
             },
             "type": "registry"
+        },
+        "opencode": {
+            "type": "registry"
         }
     },
     "auto_install_extensions": {
@@ -41,8 +44,7 @@
         "csharp": true,
         "editorconfig": true,
         "html": true,
-        "matte-black": true,
-        "nord": true
+        "matte-black": true
     },
     "autoscroll_on_clicks": true,
     "base_keymap": "VSCode",
@@ -114,6 +116,9 @@
             "projects": [
                 {
                     "paths": ["/home/jose/git/BilhetagemServicosAdicionais"]
+                },
+                {
+                    "paths": ["/home/jose/git/FaturamentoTelemetria"]
                 },
                 {
                     "paths": ["/home/jose/git/PlanosDeServico"]
