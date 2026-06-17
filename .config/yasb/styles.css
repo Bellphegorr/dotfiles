@@ -65,6 +65,11 @@
   padding: 0;
 }
 
+.komorebi-workspaces {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
 .komorebi-workspaces .ws-btn {
   font-size: 14px;
   margin: 0 3px;
