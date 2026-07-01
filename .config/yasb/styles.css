@@ -14,16 +14,19 @@
 
 .widget {
   background: #0e0e0e;
-  padding: 0px 20px;
+  padding: 0px 15px 0px 15px;
   margin: 0;
 }
 
-.widget .label {
+.icon {
+  font-size: 14px;
   color: #8a8a8d;
+  margin: 0px 4px 0px 4px;
+  padding: 4px 8px;
 }
 
-.widget .label.alt {
-  color: #8a8a8d;
+.widget-container:hover .icon:hover {
+  color: #f59e0b;
 }
 
 /* === LEFT SIDE === */
@@ -97,20 +100,24 @@
   padding: 0 0 0 8px;
 }
 
-/* Quick Launch Widget */
+/* Quick Launch + Notifications Widgets */
 .quick-launch-widget {
-  border-radius: 10px;
   margin-left: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
-.quick-launch-widget .icon {
-  font-size: 14px;
-  padding: 0 6px;
-  color: #8a8a8d;
+.notification-widget {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
-.quick-launch-widget .icon:hover {
-  color: #d4d4d6;
+.notification-widget .icon.new-notification {
+  color: #f59e0b;
+}
+
+.notification-widget .label.new-notification {
+  color: #f59e0b;
 }
 
 /* Quick Launch Popup - main window */
@@ -359,19 +366,4 @@
 .clock-widget {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-}
-
-/* === ICONS === */
-
-.icon {
-  font-size: 14px;
-}
-
-.cpu-widget .icon,
-.memory-widget .icon,
-.clock-widget .icon,
-.volume-widget .icon {
-  font-size: 14px;
-  color: #8a8a8d;
-  margin: 2px 6px 0 2px;
 }

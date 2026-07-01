@@ -32,7 +32,13 @@ bars:
       bottom: 0
       right: 8
     widgets:
-      left: ["komorebi_workspaces", "komorebi_active_layout", "quick_launch"]
+      left:
+        [
+          "komorebi_workspaces",
+          "komorebi_active_layout",
+          "quick_launch",
+          "notifications",
+        ]
       center: ["active_window"]
       right: ["volume", "memory", "cpu", "clock"]
 
@@ -104,7 +110,7 @@ widgets:
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
-      label: "<span>\uefc5</span> {virtual_mem_free}"
+      label: "<span>\uefc5</span> {virtual_mem_free}/{virtual_mem_total}"
       label_alt: "<span>\uefc5</span> {virtual_mem_percent}%"
       update_interval: 10000
       callbacks:
@@ -213,3 +219,15 @@ widgets:
       keybindings:
         - keys: "alt+space"
           action: "toggle_quick_launch"
+
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      label: "<span>\uf476</span> {count}"
+      label_alt: "{count} notifications"
+      hide_empty: false
+      tooltip: true
+      callbacks:
+        on_left: "toggle_notification"
+        on_right: "do_nothing"
+        on_middle: "toggle_label"
