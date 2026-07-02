@@ -204,11 +204,6 @@ widgets:
         on_left: "next_layout"
         on_middle: "toggle_monocle"
         on_right: "prev_layout"
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
 
   quick_launch:
     type: "yasb.quick_launch.QuickLaunchWidget"

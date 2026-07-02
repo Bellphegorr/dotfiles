@@ -14,13 +14,13 @@
 
 .widget {
   background: #0e0e0e;
-  padding: 0px 12px 0px 12px;
-  margin: 0;
+  padding: 0px 15px;
+  margin: 0px;
 }
 
 .icon {
-  margin: 0px 3px 0px 3px;
-  padding: 3px 6px;
+  padding: 0px 6px;
+  margin: 0px;
 }
 
 .icon:hover {
