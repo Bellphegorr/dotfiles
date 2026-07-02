@@ -8,56 +8,28 @@
 * {
   font-size: 14px;
   color: #8a8a8d;
-  font-weight: normal;
+  font-weight: bold;
   font-family: "JetBrainsMono Nerd Font";
 }
 
 .widget {
   background: #0e0e0e;
-  padding: 0px 15px 0px 15px;
+  padding: 0px 12px 0px 12px;
   margin: 0;
 }
 
 .icon {
-  font-size: 14px;
-  color: #8a8a8d;
-  margin: 0px 4px 0px 4px;
-  padding: 4px 8px;
+  margin: 0px 3px 0px 3px;
+  padding: 3px 6px;
 }
 
-.widget-container:hover .icon:hover {
+.icon:hover {
   color: #f59e0b;
 }
 
 /* === LEFT SIDE === */
 
-/* Taskbar widget */
-.taskbar-widget {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
-.taskbar-widget .widget-container {
-  padding: 0;
-  margin: 0;
-}
-
-.taskbar-widget .app-container {
-  margin: 0 3px;
-  padding: 4px;
-  border-radius: 6px;
-  opacity: 0.5;
-  background: transparent;
-}
-
-.taskbar-widget .app-container:hover {
-  opacity: 1;
-}
-
-.taskbar-widget .app-container.foreground {
-  opacity: 1;
-}
-
+/* Komorebi widgets */
 .komorebi-active-layout {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -74,17 +46,14 @@
 }
 
 .komorebi-workspaces .ws-btn {
-  font-size: 14px;
   margin: 0 3px;
-  padding: 4px;
-  color: #8a8a8d;
+  padding: 3px;
   border: none;
   opacity: 0.1;
 }
 
 .komorebi-workspaces .ws-btn.populated {
-  color: #8a8a8d;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .komorebi-workspaces .ws-btn:hover,
@@ -94,30 +63,11 @@
   opacity: 1;
 }
 
-.komorebi-workspaces .float-override {
-  color: #f59e0b;
-  font-size: 14px;
-  padding: 0 0 0 8px;
-}
-
-/* Quick Launch + Notifications Widgets */
+/* Quick Launch widget */
 .quick-launch-widget {
   margin-left: 10px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-}
-
-.notification-widget {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
-.notification-widget .icon.new-notification {
-  color: #f59e0b;
-}
-
-.notification-widget .label.new-notification {
-  color: #f59e0b;
 }
 
 /* Quick Launch Popup - main window */
@@ -348,21 +298,32 @@
   border-color: #ffb01f;
 }
 
+/* Notification Widget */
+.notification-widget {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.notification-widget .icon.new-notification {
+  color: #f59e0b;
+}
+
 /* === CENTER === */
 
+/* Active window widget */
 .active-window-widget {
   border-radius: 10px;
 }
 
 /* === RIGHT SIDE === */
 
-/* First widget in right group - left rounded */
+/* Volume widget */
 .volume-widget {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
-/* Last widget in right group - right rounded */
+/* Clock widget */
 .clock-widget {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
