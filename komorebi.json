@@ -77,7 +77,6 @@
       "base_0f": "#525252"
     }
   },
-  "display_index_preferences": {},
   "monitors": [
     {
       "workspaces": [
@@ -123,31 +122,31 @@
         },
         {
           "name": "\uf111",
-          "layout": "BSP"
+          "layout": "Rows"
         },
         {
           "name": "\uf111",
-          "layout": "BSP"
+          "layout": "Rows"
         },
         {
           "name": "\uf111",
-          "layout": "BSP"
+          "layout": "Rows"
         },
         {
           "name": "\uf111",
-          "layout": "BSP"
+          "layout": "Rows"
         },
         {
           "name": "\uf111",
-          "layout": "BSP"
+          "layout": "Rows"
         },
         {
           "name": "\uf111",
-          "layout": "BSP"
+          "layout": "Rows"
         },
         {
           "name": "\uf111",
-          "layout": "BSP"
+          "layout": "Rows"
         }
       ]
     }
