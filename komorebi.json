@@ -77,7 +77,93 @@
       "base_0f": "#525252"
     }
   },
+  "monitor_index_preferences": {
+    "2": {
+      "left": 0,
+      "top": 0,
+      "right": 1920,
+      "bottom": 1080
+    },
+    "3": {
+      "left": -1366,
+      "top": 181,
+      "right": 1366,
+      "bottom": 768
+    }
+  },
   "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "\uf120",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "\udb80\udd69",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "\uf268",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "\udb80\ude4b",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "\uf4b8",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "\udb80\udf72",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "\uf4ca",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "\uf111",
+          "layout": "VerticalStack"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "\uf111",
+          "layout": "Rows"
+        },
+        {
+          "name": "\uf111",
+          "layout": "Rows"
+        },
+        {
+          "name": "\uf111",
+          "layout": "Rows"
+        },
+        {
+          "name": "\uf111",
+          "layout": "Rows"
+        },
+        {
+          "name": "\uf111",
+          "layout": "Rows"
+        },
+        {
+          "name": "\uf111",
+          "layout": "Rows"
+        },
+        {
+          "name": "\uf111",
+          "layout": "Rows"
+        },
+        {
+          "name": "\uf111",
+          "layout": "Rows"
+        }
+      ]
+    },
     {
       "workspaces": [
         {
