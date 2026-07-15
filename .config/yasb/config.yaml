@@ -144,7 +144,7 @@ widgets:
       container_padding:
         top: 0
         left: 8
-        bottom: true
+        bottom: 0
         right: 8
       app_icons:
         enabled_populated: false
@@ -158,12 +158,13 @@ widgets:
   komorebi_workspaces_alt:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
+      label_offline: "Komorebi Offline"
       label_workspace_btn: "{name}"
       label_workspace_active_btn: "{name}"
       label_workspace_populated_btn: "{name}"
       label_default_name: ""
       label_zero_index: false
-      hide_empty_workspaces: true
+      hide_empty_workspaces: false
       hide_if_offline: true
       container_padding:
         top: 0
