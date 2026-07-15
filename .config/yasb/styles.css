@@ -37,7 +37,31 @@
 
 .komorebi-active-layout .label {
   font-weight: 600;
-  padding: 0;
+}
+
+.komorebi-layout-menu {
+  background: #0e0e0e;
+}
+
+.komorebi-layout-menu .menu-item {
+  padding: 8px 16px;
+}
+
+.komorebi-layout-menu .menu-item-icon {
+  color: #fff;
+}
+
+.komorebi-layout-menu .menu-item-text {
+  font-size: 12px;
+}
+
+.komorebi-layout-menu .menu-item:hover {
+  background-color: #f59e0b;
+}
+
+.komorebi-layout-menu .separator {
+  max-height: 1px;
+  background-color: #8a8a8d;
 }
 
 .komorebi-workspaces {

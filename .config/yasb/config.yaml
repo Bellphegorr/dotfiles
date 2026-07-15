@@ -201,9 +201,19 @@ widgets:
         maximised: "MAX"
         floating: "FLT"
         paused: "PAUSE"
+      layout_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "left"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_layout_icons: true
       callbacks:
-        on_left: "next_layout"
-        on_middle: "toggle_monocle"
+        on_left: "toggle_layout_menu"
+        on_middle: "next_layout"
         on_right: "prev_layout"
 
   quick_launch:
