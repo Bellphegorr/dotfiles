@@ -108,35 +108,35 @@
       "workspaces": [
         {
           "name": "\uf120",
-          "layout": "VerticalStack"
+          "layout": "UltrawideVerticalStack"
         },
         {
           "name": "\udb80\udd69",
-          "layout": "VerticalStack"
+          "layout": "UltrawideVerticalStack"
         },
         {
           "name": "\uf268",
-          "layout": "VerticalStack"
+          "layout": "UltrawideVerticalStack"
         },
         {
           "name": "\udb80\ude4b",
-          "layout": "VerticalStack"
+          "layout": "UltrawideVerticalStack"
         },
         {
           "name": "\uf4b8",
-          "layout": "VerticalStack"
+          "layout": "UltrawideVerticalStack"
         },
         {
           "name": "\udb80\udf72",
-          "layout": "VerticalStack"
+          "layout": "UltrawideVerticalStack"
         },
         {
           "name": "\uf4ca",
-          "layout": "VerticalStack"
+          "layout": "UltrawideVerticalStack"
         },
         {
           "name": "\uf111",
-          "layout": "VerticalStack"
+          "layout": "UltrawideVerticalStack"
         }
       ]
     },
@@ -148,31 +148,31 @@
         },
         {
           "name": "\uf111",
-          "layout": "Rows"
+          "layout": "BSP"
         },
         {
           "name": "\uf111",
-          "layout": "Rows"
+          "layout": "BSP"
         },
         {
           "name": "\uf111",
-          "layout": "Rows"
+          "layout": "BSP"
         },
         {
           "name": "\uf111",
-          "layout": "Rows"
+          "layout": "BSP"
         },
         {
           "name": "\uf111",
-          "layout": "Rows"
+          "layout": "BSP"
         },
         {
           "name": "\uf111",
-          "layout": "Rows"
+          "layout": "BSP"
         },
         {
           "name": "\uf111",
-          "layout": "Rows"
+          "layout": "BSP"
         }
       ]
     },
