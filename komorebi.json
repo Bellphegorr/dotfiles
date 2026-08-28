@@ -5,7 +5,7 @@
     [
       {
         "kind": "Class",
-        "id": "HwndWrapper[DefaultDomain",
+        "id": "HwndWrapper[DefaultDomain]",
         "matching_strategy": "StartsWith"
       }
     ],
