@@ -77,31 +77,11 @@
       "base_0f": "#525252"
     }
   },
-  "monitor_index_preferences": {
-    "0": {
-      "left": 0,
-      "top": 0,
-      "right": 2560,
-      "bottom": 1080
-    },
-    "1": {
-      "left": -1080,
-      "top": -545,
-      "right": 1080,
-      "bottom": 1920
-    },
-    "2": {
-      "left": 0,
-      "top": 0,
-      "right": 1920,
-      "bottom": 1080
-    },
-    "3": {
-      "left": -1366,
-      "top": 181,
-      "right": 1366,
-      "bottom": 768
-    }
+  "display_index_preferences": {
+    "0": "16843009",
+    "1": "",
+    "2": "",
+    "3": ""
   },
   "monitors": [
     {
