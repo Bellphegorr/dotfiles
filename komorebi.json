@@ -78,10 +78,9 @@
     }
   },
   "display_index_preferences": {
-    "0": "16843009",
-    "1": "",
-    "2": "",
-    "3": ""
+    "0": "16843009", // work-widescreen
+    "1": "0", // work-laptop
+    "2": "N8F3M26Q07RM" // work-screen
   },
   "monitors": [
     {
@@ -124,10 +123,6 @@
       "workspaces": [
         {
           "name": "\uf111",
-          "layout": "Rows"
-        },
-        {
-          "name": "\uf111",
           "layout": "BSP"
         },
         {
@@ -153,6 +148,46 @@
         {
           "name": "\uf111",
           "layout": "BSP"
+        },
+        {
+          "name": "\uf111",
+          "layout": "BSP"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "\uf120",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "\udb80\udd69",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "\uf268",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "\udb80\ude4b",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "\uf4b8",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "\udb80\udf72",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "\uf4ca",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "\uf111",
+          "layout": "UltrawideVerticalStack"
         }
       ]
     }
