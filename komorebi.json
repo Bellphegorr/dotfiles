@@ -78,7 +78,7 @@
     }
   },
   "display_index_preferences": {
-    "0": "16843009", // work-widescreen
+    "0": "W5LMQS084400", // work-qdh
     "1": "0", // work-laptop
     "2": "N8F3M26Q07RM" // work-screen
   },
@@ -87,35 +87,35 @@
       "workspaces": [
         {
           "name": "\uf120",
-          "layout": "UltrawideVerticalStack"
+          "layout": "VerticalStack"
         },
         {
           "name": "\udb80\udd69",
-          "layout": "UltrawideVerticalStack"
+          "layout": "VerticalStack"
         },
         {
           "name": "\uf268",
-          "layout": "UltrawideVerticalStack"
+          "layout": "VerticalStack"
         },
         {
           "name": "\udb80\ude4b",
-          "layout": "UltrawideVerticalStack"
+          "layout": "VerticalStack"
         },
         {
           "name": "\uf4b8",
-          "layout": "UltrawideVerticalStack"
+          "layout": "VerticalStack"
         },
         {
           "name": "\udb80\udf72",
-          "layout": "UltrawideVerticalStack"
+          "layout": "VerticalStack"
         },
         {
           "name": "\uf4ca",
-          "layout": "UltrawideVerticalStack"
+          "layout": "VerticalStack"
         },
         {
           "name": "\uf111",
-          "layout": "UltrawideVerticalStack"
+          "layout": "VerticalStack"
         }
       ]
     },
