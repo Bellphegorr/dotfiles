@@ -81,7 +81,9 @@
     "0": "W5LMQS084400", // work-qdh
     "1": "0", // work-laptop
     "2": "N8F3M26Q07RM", // work-screen
-    "3": "E72H8XA000535" // work-other
+    "3": "E72H8XA000535", // work-other
+    "4": "W5LMQS084400", // home-qhd
+    "5": "16843009" // home-vertical
   },
   "monitors": [
     {
@@ -225,6 +227,78 @@
         {
           "name": "\uf111",
           "layout": "VerticalStack"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "\uf120",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "\udb80\udd69",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "\uf268",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "\udb80\ude4b",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "\uf4b8",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "\udb80\udf72",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "\uf4ca",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "\uf111",
+          "layout": "VerticalStack"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "\uf111",
+          "layout": "BSP"
+        },
+        {
+          "name": "\uf111",
+          "layout": "BSP"
+        },
+        {
+          "name": "\uf111",
+          "layout": "BSP"
+        },
+        {
+          "name": "\uf111",
+          "layout": "BSP"
+        },
+        {
+          "name": "\uf111",
+          "layout": "BSP"
+        },
+        {
+          "name": "\uf111",
+          "layout": "BSP"
+        },
+        {
+          "name": "\uf111",
+          "layout": "BSP"
+        },
+        {
+          "name": "\uf111",
+          "layout": "BSP"
         }
       ]
     }
