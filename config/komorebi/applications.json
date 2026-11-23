@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/master/schema.asc.json",
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.41/schema.asc.json",
   "1Password": {
     "ignore": [
       {

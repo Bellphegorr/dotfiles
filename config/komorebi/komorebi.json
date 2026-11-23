@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.41/schema.json",
-  "app_specific_configuration_path": "$Env:USERPROFILE/dotfiles/applications.json",
+  "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
   "manage_rules": [
     [
       {
@@ -78,12 +78,12 @@
     }
   },
   "display_index_preferences": {
-    "0": "W5LMQS084400", // work-qdh
-    "1": "0", // work-laptop
-    "2": "N8F3M26Q07RM", // work-screen
-    "3": "E72H8XA000535", // work-other
-    "4": "W5LMQS084400", // home-qhd
-    "5": "16843009" // home-vertical
+    "0": "W5LMQS084400",
+    "1": "0",
+    "2": "N8F3M26Q07RM",
+    "3": "E72H8XA000535",
+    "4": "W5LMQS084400",
+    "5": "16843009"
   },
   "monitors": [
     {

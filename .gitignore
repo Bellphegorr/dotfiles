@@ -1,1 +1,4 @@
-.config/yasb/yasb.log
+*.log
+*.bak
+Thumbs.db
+.DS_Store
