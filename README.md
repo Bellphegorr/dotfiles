@@ -111,4 +111,6 @@ Get-Process komorebi, whkd, yasb
 - O `komorebi-bar` nao e usado e o `komorebi.bar.json` nao e sincronizado.
 - As conexoes WSL do Zed ficam sem projetos pessoais no repo; adicione os seus
   localmente.
-- A validacao roda no CI em `.github/workflows/validate.yml`.
+- A validacao e local: rode
+  `powershell -ExecutionPolicy Bypass -File .\scripts\validate.ps1` antes de
+  commitar.

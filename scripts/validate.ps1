@@ -8,7 +8,7 @@
     JSONC for Zed, YAML structure, CSS brace balance and the repository layout.
     Exits with code 1 when any check fails.
 
-    This is the check used by .github/workflows/validate.yml.
+    Run it before committing; it is the local validation gate.
 #>
 [CmdletBinding()]
 param(
