@@ -1,15 +1,13 @@
 # dotfiles
 
-Configuracoes do meu desktop Windows com Komorebi, whkd e YASB.
+Configuracoes do desktop Windows: Komorebi, whkd, YASB, Zed e Windows Terminal.
 
-## Stack
+O lado WSL tem repositorio proprio:
+[dotfiles-wsl](https://github.com/Bellphegorr/dotfiles-wsl).
 
-- `Komorebi`: gerenciador de janelas tiling.
-- `whkd`: atalhos de teclado para controlar o Komorebi.
-- `YASB`: barra superior com widgets e integracao com o Komorebi.
-- `Zed`: editor de texto com foco em performance e colaboracao.
+## Instalacao
 
-## Instalar
+Pre-requisitos:
 
 ```powershell
 winget install --id Git.Git --exact --source winget
@@ -17,129 +15,100 @@ winget install --id LGUG2Z.komorebi --exact --source winget
 winget install --id LGUG2Z.whkd --exact --source winget
 winget install --id AmN.yasb --exact --source winget
 winget install --id DEVCOM.JetBrainsMonoNerdFont --exact --source winget
+winget install --id ZedIndustries.Zed --exact --source winget
 ```
 
-Abra um novo terminal depois do `winget` e confirme que os binarios ficaram no `PATH`:
+O Windows Terminal ja vem no Windows 11.
 
 ```powershell
-Get-Command komorebic, whkd, yasb
+git clone https://github.com/Bellphegorr/dotfiles.git "$HOME\dotfiles"
+cd "$HOME\dotfiles"
+powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-Se `komorebic` ou `whkd` nao forem encontrados, adicione os bins ao `PATH` do usuario:
+O repositorio pode ficar em qualquer caminho: o instalador copia para
+`%USERPROFILE%`.
+
+- `-Verify`: so compara, nao escreve.
+- `-Force`: substitui conflitos depois de guardar backup.
+
+## O que o install.ps1 faz
+
+- Copia os arquivos listados em `scripts/manifest.ps1`; nao usa hardlinks nem
+  symlinks.
+- Mantem o estado em
+  `%LOCALAPPDATA%\dotfiles\state\windows-dotfiles\installed` e os backups em
+  `%LOCALAPPDATA%\dotfiles\state\windows-dotfiles-backup\<timestamp>`.
+- Arquivo igual ao repo: `ok`. Igual a ultima copia: atualiza com backup.
+  Diferente dos dois: conflito, aborta sem alterar; use `-Force`.
+- Na primeira execucao, arquivos iguais (inclusive hardlinks antigos) viram
+  copias independentes.
+- Como e copia, o Windows Terminal e o YASB podem reescrever seus arquivos; a
+  proxima execucao detecta a diferenca como conflito.
+
+## Atualizar
 
 ```powershell
-$required = @("C:\Program Files\komorebi\bin", "C:\Program Files\whkd\bin")
-$userPath = [Environment]::GetEnvironmentVariable("Path", "User")
-$segments = $userPath -split ';' | Where-Object { $_ }
-foreach ($dir in $required) {
-	if ($segments -notcontains $dir) {
-		$segments += $dir
-	}
-}
-[Environment]::SetEnvironmentVariable("Path", ($segments | Select-Object -Unique) -join ';', "User")
+cd "$HOME\dotfiles"
+git pull
+powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-## Usar
+## Estrutura
 
-Clone o repositorio:
+`scripts/manifest.ps1` e a fonte unica de verdade do mapa origem -> destino. A
+tabela abaixo e um resumo.
 
-```powershell
-git clone <SEU_REPO> "$HOME\dotfiles"
-```
+| Origem | Destino |
+| --- | --- |
+| `config/komorebi/komorebi.json` | `%USERPROFILE%\komorebi.json` |
+| `config/komorebi/applications.json` | `%USERPROFILE%\applications.json` |
+| `config/komorebi/start-komorebi.cmd` | `%USERPROFILE%\start-komorebi.cmd` |
+| `config/whkd/whkdrc` | `%USERPROFILE%\.config\whkdrc` |
+| `config/yasb/config.yaml` | `%USERPROFILE%\.config\yasb\config.yaml` |
+| `config/yasb/styles.css` | `%USERPROFILE%\.config\yasb\styles.css` |
+| `config/zed/settings.json` | `%APPDATA%\Zed\settings.json` |
+| `config/zed/keymap.json` | `%APPDATA%\Zed\keymap.json` |
+| `config/windows-terminal/settings.json` | `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json` |
 
-Se ja houver configuracoes nesses caminhos, faca backup ou mova os arquivos antes de criar os links. O `New-Item` falha se o destino ja existir.
+O motor e a validacao ficam em `scripts/install-lib.ps1` e
+`scripts/validate.ps1`; `install.ps1` e o ponto de entrada.
 
-Exemplo de backup rapido:
-
-```powershell
-$backupRoot = Join-Path $HOME ("dotfiles-backup\komorebi-yasb-" + (Get-Date -Format 'yyyyMMdd-HHmmss'))
-$paths = @(
-	"$HOME\.config\yasb\config.yaml",
-	"$HOME\.config\yasb\styles.css",
-	"$HOME\.config\whkdrc",
-	"$HOME\AppData\Roaming\Zed\settings.json",
-	"$HOME\AppData\Roaming\Zed\keymap.json",
-	"$HOME\applications.json",
-	"$HOME\komorebi.json",
-	"$HOME\komorebi.bar.json"
-)
-
-foreach ($path in $paths) {
-	if (Test-Path $path) {
-		$backup = Join-Path $backupRoot ($path.Replace("$HOME\", ""))
-		New-Item -ItemType Directory -Force -Path (Split-Path $backup) | Out-Null
-		Move-Item -Path $path -Destination $backup -Force
-	}
-}
-```
-
-Crie os links para os caminhos usados no Windows:
+## Iniciar
 
 ```powershell
-New-Item -ItemType Directory -Force -Path "$HOME\.config\yasb"
-New-Item -ItemType Directory -Force -Path "$HOME\AppData\Roaming\Zed"
-New-Item -ItemType HardLink -Path "$HOME\.config\yasb\config.yaml" -Target "$HOME\dotfiles\.config\yasb\config.yaml"
-New-Item -ItemType HardLink -Path "$HOME\.config\yasb\styles.css" -Target "$HOME\dotfiles\.config\yasb\styles.css"
-New-Item -ItemType HardLink -Path "$HOME\.config\whkdrc" -Target "$HOME\dotfiles\.config\whkdrc"
-New-Item -ItemType HardLink -Path "$HOME\AppData\Roaming\Zed\settings.json" -Target "$HOME\dotfiles\AppData\Roaming\Zed\settings.json"
-New-Item -ItemType HardLink -Path "$HOME\AppData\Roaming\Zed\keymap.json" -Target "$HOME\dotfiles\AppData\Roaming\Zed\keymap.json"
-New-Item -ItemType HardLink -Path "$HOME\applications.json" -Target "$HOME\dotfiles\applications.json"
-New-Item -ItemType HardLink -Path "$HOME\komorebi.json" -Target "$HOME\dotfiles\komorebi.json"
-New-Item -ItemType HardLink -Path "$HOME\komorebi.bar.json" -Target "$HOME\dotfiles\komorebi.bar.json"
-```
-
-## Verificacao dos hardlinks
-
-Para conferir todos os hardlinks que este repositorio cria, rode:
-
-```powershell
-$paths = @(
-	"$HOME\.config\yasb\config.yaml",
-	"$HOME\.config\yasb\styles.css",
-	"$HOME\.config\whkdrc",
-	"$HOME\AppData\Roaming\Zed\settings.json",
-	"$HOME\AppData\Roaming\Zed\keymap.json",
-	"$HOME\applications.json",
-	"$HOME\komorebi.json",
-	"$HOME\komorebi.bar.json"
-)
-
-foreach ($path in $paths) {
-	Write-Host "`n=== $path ==="
-	fsutil hardlink list $path
-}
-```
-
-Se o hardlink estiver intacto, a saida de cada caminho precisa listar tambem o caminho parceiro no `dotfiles`. Se aparecer apenas o proprio caminho, o link foi quebrado.
-
-O `komorebi.json` do repositorio referencia diretamente `dotfiles/applications.json`, e os arquivos na raiz ficam apenas como caminhos de compatibilidade no Windows.
-
-Inicie o ambiente:
-
-```powershell
-& "$HOME\dotfiles\start-komorebi.cmd"
+& "$HOME\start-komorebi.cmd"
 yasb
 ```
 
-Para iniciar automaticamente no logon, deixe um launcher em `%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\komorebi-autostart.cmd` com este conteudo:
+Para iniciar no logon, crie
+`%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\komorebi-autostart.cmd`:
 
 ```cmd
 @echo off
-call "%USERPROFILE%\dotfiles\start-komorebi.cmd"
+call "%USERPROFILE%\start-komorebi.cmd"
 ```
 
-Valide o setup:
+## Validar
 
 ```powershell
-komorebic check
+powershell -ExecutionPolicy Bypass -File .\scripts\validate.ps1
+komorebic check -k "$HOME\komorebi.json"
 komorebic state
 Get-Process komorebi, whkd, yasb
 ```
 
+## Documentacao
+
+| Guia | Conteudo |
+| --- | --- |
+| [Monitores](docs/monitores.md) | Mapa de `display_index_preferences` |
+
 ## Notas
 
-- O YASB recarrega `config.yaml` e `styles.css` ao salvar.
-- O arquivo `.config/yasb/yasb.log` e gerado em runtime e nao entra no Git.
-- O Zed usa `settings.json` e `keymap.json` em `%APPDATA%\Zed`; como os arquivos ficam no mesmo volume, este repositorio usa hardlinks para ambos.
-- O `whkdrc` ja esta sincronizado neste repositorio.
-- O launcher `start-komorebi.cmd` sempre usa `dotfiles/komorebi.json`, mesmo quando o Komorebi e iniciado pelo YASB ou pelo Startup do Windows.
+- O YASB recarrega `config.yaml` e `styles.css` ao salvar. Se o `whkdrc` mudar,
+  use `Alt+O` ou reinicie o whkd.
+- O `komorebi-bar` nao e usado e o `komorebi.bar.json` nao e sincronizado.
+- As conexoes WSL do Zed ficam sem projetos pessoais no repo; adicione os seus
+  localmente.
+- A validacao roda no CI em `.github/workflows/validate.yml`.
