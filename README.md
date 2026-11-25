@@ -64,6 +64,7 @@ tabela abaixo e um resumo.
 | `config/komorebi/komorebi.json` | `%USERPROFILE%\komorebi.json` |
 | `config/komorebi/applications.json` | `%USERPROFILE%\applications.json` |
 | `config/komorebi/start-komorebi.cmd` | `%USERPROFILE%\start-komorebi.cmd` |
+| `config/komorebi/komorebi-autostart.cmd` | `%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\komorebi-autostart.cmd` |
 | `config/whkd/whkdrc` | `%USERPROFILE%\.config\whkdrc` |
 | `config/yasb/config.yaml` | `%USERPROFILE%\.config\yasb\config.yaml` |
 | `config/yasb/styles.css` | `%USERPROFILE%\.config\yasb\styles.css` |
@@ -81,12 +82,16 @@ O motor e a validacao ficam em `scripts/install-lib.ps1` e
 yasb
 ```
 
-Para iniciar no logon, crie
-`%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\komorebi-autostart.cmd`:
+No logon, o `install.ps1` instala
+`%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\komorebi-autostart.cmd`,
+que chama `%USERPROFILE%\start-komorebi.cmd` e nao depende do caminho do clone.
 
-```cmd
-@echo off
-call "%USERPROFILE%\start-komorebi.cmd"
+Se a maquina ja tinha um `komorebi-autostart.cmd` manual apontando para
+`dotfiles\start-komorebi.cmd`, a primeira execucao com `-Force` substitui o
+arquivo e guarda backup:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\install.ps1 -Force
 ```
 
 ## Validar

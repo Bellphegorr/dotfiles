@@ -18,6 +18,10 @@ function Get-DotfilesManifest {
             Target = 'start-komorebi.cmd'
         }
         [pscustomobject]@{
+            Source = 'config/komorebi/komorebi-autostart.cmd'
+            Target = 'AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/komorebi-autostart.cmd'
+        }
+        [pscustomobject]@{
             Source = 'config/whkd/whkdrc'
             Target = '.config/whkdrc'
         }
