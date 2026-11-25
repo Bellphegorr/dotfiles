@@ -389,6 +389,21 @@ if ($launcherPath) {
     }
 }
 
+$autostartPath = $paths['config/komorebi/komorebi-autostart.cmd']
+if ($autostartPath) {
+    $autostart = [System.IO.File]::ReadAllText($autostartPath)
+    if ($autostart -match '%USERPROFILE%\\start-komorebi\.cmd') {
+        Pass 'komorebi-autostart.cmd calls %USERPROFILE%\start-komorebi.cmd'
+    } else {
+        Fail 'komorebi-autostart.cmd does not call %USERPROFILE%\start-komorebi.cmd'
+    }
+    if ($autostart -match 'dotfiles') {
+        Fail 'komorebi-autostart.cmd still references dotfiles'
+    } else {
+        Pass 'komorebi-autostart.cmd is independent of the clone path'
+    }
+}
+
 Write-Host ''
 if ($script:Failures -gt 0) {
     Write-Host ("Validation failed: {0} failure(s), {1} check(s)." -f $script:Failures, $script:Checks) -ForegroundColor Red
